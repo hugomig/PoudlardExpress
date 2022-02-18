@@ -25,6 +25,15 @@
             </div>
             <x3d width='90vw' height='90vh'>
                 <scene>
+                    <transform translation="0.3 3.3 2">
+                        <shape onclick="handleRedCubeClick()">
+                            <appearance>
+                                <material diffuseColor="1 0 0"/>
+                            </appearance>
+                            <box size="0.1,0.1,0.1"></box>
+                        </shape>
+                    </transform>
+
                     <?php
                         include("train.php");
                     ?>
@@ -90,34 +99,16 @@
         `);
     }
 
-    const generateGreenCubePopup = () => {
+    const generateRedCubePopup = () => {
         return generatePopup(`
-            <h2>Menu</h2>
-            <div>
-                <ul>
-                    <li>1</li>
-                    <li>2</li>
-                </ul>
+            <div class="popup__image-wrapper">
+                <img src="public/menu.jpg"/>
             </div>
         `)
     }
 
-    const generateBlueCubePopup = () => {
-        return generatePopup(`
-            <h2>Autre</h2>
-            <div>
-                Un autre contenu    
-            </div>
-        `)
-    }
-
-    const handleGreenCubeClick = (event) => {
-        const popupContent = generateGreenCubePopup();
-        openPopup(popupContent);
-    }
-
-    const handleBlueCubeClick = (event) => {
-        const popupContent = generateBlueCubePopup();
+    const handleRedCubeClick = (event) => {
+        const popupContent = generateRedCubePopup();
         openPopup(popupContent);
     }
 </script>
